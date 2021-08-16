@@ -9,36 +9,36 @@ import {
   NavItem,
   NavLinks,
   BtnWrapper,
-  Btn,
 } from "./NavbarStyles";
+import { Btn } from "../Globalstyles/GlobalStyles";
 
-function Navbar() {
+function Navbar({ toggle }) {
   return (
     <>
       <Nav>
         <NavbarContainer>
           <NavLogo to="/">LOGO</NavLogo>
-        </NavbarContainer>
-        <MobileIcon>
-          <FaBars />
-        </MobileIcon>
-        <NavMenu>
-          <NavItem>
-            <NavLinks to="/about">About</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to="/blog">Blog</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to="/Contact">Contact</NavLinks>
-          </NavItem>
-          <NavItem>
-            <NavLinks to="/support">Support</NavLinks>
-          </NavItem>
+          <MobileIcon onClick={toggle}>
+            <FaBars />
+          </MobileIcon>
+          <NavMenu>
+            <NavItem>
+              <NavLinks to="/about">About</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="/blog">Blog</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="/Contact">Contact</NavLinks>
+            </NavItem>
+            <NavItem>
+              <NavLinks to="/support">Support</NavLinks>
+            </NavItem>
+          </NavMenu>
           <BtnWrapper>
-            <Btn>Sign up</Btn>
+            <Btn to="/signin">Sign in</Btn>
           </BtnWrapper>
-        </NavMenu>
+        </NavbarContainer>
       </Nav>
     </>
   );
